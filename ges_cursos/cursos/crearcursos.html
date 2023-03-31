@@ -42,72 +42,49 @@
     <div class="mb-3">
 
       <div class="btn-group">
-        <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          Horario
-        </button>
-        <ul class="dropdown-menu">
-          <li>
-            
-
-          </li>
-<li><!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-      Launch demo modal
-    </button>
-    
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            ...
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div> </li>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Launch demo modal
-  </button>
+        <div class="dropdown">
+          <button  type="button" class="btn btn-secondary dropdown-toggle" id="simpleDropdown"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  Horarios
+          </button>
+          <ul class="dropdown-menu">
+          <button type="button" class="btn btn-secondary dropdown-toggle" id="simpleDropdown"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Mañana
+          </button>
+          <ul>
+              <button>De 7:00am a 9:00am</button> 
+              <br>
+              <button>De 9:00am a 10:00am</button>
+              <br>
+              <button>De 10:00am a 12:00am</button> 
+          </ul>
+          <button type="button" class="btn btn-secondary dropdown-toggle" id="simpleDropdown"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Tarde
+          </button>
+          <ul>
+              <button>De 12:00am a 3:00pm</button> 
+              <br>
+              <button>De 3:00pm a 5:00am</button>
+              <br>
+              <button>De 5:00pm a 7:00pm</button> 
+          </ul>
+          <button type="button" class="btn btn-secondary dropdown-toggle" id="simpleDropdown"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Noche
+          </button>
+          <ul>
+              <button>De 7:00pm a 9:00pm</button> 
+              <br>
+              <button>De 9:00pm a 10:00pm</button>
+              <br>
+              <button>De 10:00pm a 12:00pm</button> 
+          </ul>
   
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div> </button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
+         </ul>
       </div>
-    </div>
-  </div>
-  <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          
-          <li><a class="dropdown-item" href="#">Tarde</a></li>
-          <li><a class="dropdown-item" href="#">Noche</a></li>
-        </ul>
-      </div>
-      <input type="text" class="form-control" id="formGroupExampleInput7" placeholder="Another input placeholder">
-
-    </div>
-    <div class="mb-3">
+      <div>
       <label for="Valor" class="form-label">Valor</label>
       <input type="text" class="form-control" id="formGroupExampleInput7" placeholder="Another input placeholder">
     </div>

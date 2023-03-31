@@ -1,0 +1,11 @@
+.pb{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    margin: 20px;
+}
+.pcen{
+    text-align: center;
+    margin-top: 10px;
+}

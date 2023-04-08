@@ -1,1 +1,15 @@
-
+#mar{
+  margin: 60px;
+}
+body {
+  background: #f4f4f9;
+}
+button{
+  font-size: 30px;
+  border: 0px;
+  border-radius: 7px;
+  background: #586F7C;
+  margin: 15px;
+  color: #f4f4f9;
+  font-family: monospace;
+}

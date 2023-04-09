@@ -1,11 +1,62 @@
-.pb{
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    gap: 100px;
-    margin: 20px;
+.bot{
+    background: #2F4550;
+    color: #F4F4F9;
+    border-width: 0px;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 15px;
+    height: 40px;
+    width: 80px;
 }
-.pcen{
-    text-align: center;
-    margin-top: 10px;
+.botclose{
+    background: #586F7C;
+    color: #F4F4F9;
+    border-width: 0px;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 15px;
+    height: 40px;
+    width: 80px;
+}
+.pmod{
+    background: #B8DBD9;
+}
+.modal-title{
+    color: #2F4550;
+}
+.boted{
+    background: #B8DBD9;
+    color: #2F4550;
+    border-width: 0px;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 15px;
+    height: 40px;
+    width: 100px;
+}
+.botel{
+    background: #2F4550;
+    color: #B8DBD9;
+    border-width: 0px;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 15px;
+    height: 40px;
+    width: 100px;
+}
+.cab{
+    
+    margin: 35px;
+}
+.botcab{
+    background: #2F4550;
+    color: #F4F4F9;
+    border-width: 0px;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 15px;
+    height: 40px;
+    width: 250px;
+    margin-left: 10px;
+    margin-right: 10px;
 }

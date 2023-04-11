@@ -1,5 +1,5 @@
 datos = [];
-id = 0;
+id = 1;
 edit = false;
 idEdit = 0;
 mostrar();
@@ -33,7 +33,8 @@ function guardar() {
     estudios: estudios,
   };
   if (!this.edit) {
-    datosIngresados.id++;
+    id++
+    datosIngresados.id;
     this.datos.push(datosIngresados);
   } else {
     let editar = this.datos.findIndex((data) => (data.id = this.idEdit));

@@ -1,5 +1,5 @@
 datos = [];
-id = 1;
+id = 0;
 edit = false;
 idEdit = 0;
 mostrar();
@@ -7,14 +7,14 @@ function guardar() {
   let nombres = document.getElementById("nombres").value ?? null;
   let correo = document.getElementById("correo").value ?? null;
   let telefono = document.getElementById("telefono").value ?? null;
-  let usuario = document.getElementById("user").value ?? null;
+  let estudios = document.getElementById("estudios").value ?? null
 
-  if (!nombres || !correo || !telefono || !usuario) {
+  if (!nombres || !correo || !telefono || !estudios) {
     Swal.fire({
-      icon: 'error',
-      title: 'Los datos no fueron guardados',
-      text: 'Faltan campos por completar',
-    })
+        icon: 'error',
+        title: 'Los datos no fueron guardados',
+        text: 'Faltan campos por completar',
+      })
     return;
   }
   else{
@@ -30,11 +30,10 @@ function guardar() {
     nombre: nombres,
     correo: correo,
     celular: telefono,
-    usuario: usuario,
+    estudios: estudios,
   };
   if (!this.edit) {
-    id++
-    datosIngresados.id;
+    datosIngresados.id++;
     this.datos.push(datosIngresados);
   } else {
     let editar = this.datos.findIndex((data) => (data.id = this.idEdit));
@@ -45,7 +44,7 @@ function guardar() {
   document.getElementById("nombres").value = "";
   document.getElementById("correo").value = "";
   document.getElementById("telefono").value = "";
-  document.getElementById("user").value = "";
+  document.getElementById("estudios").value = "";
   document.getElementById("modal").style.display = "none";
 }
 
@@ -58,7 +57,7 @@ function mostrar() {
                             <td>${data.nombre}</td>
                             <td>${data.correo}</td>
                             <td>${data.celular}</td>
-                            <td>${data.usuario}</td>
+                            <td>${data.estudios}</td>
                             <th class="text-center">
                                 <button class="boted" data-bs-toggle="modal"
                                 data-bs-target="#modalArticulo" onclick="editar('${data.id}')">Editar <span class="material-symbols-outlined">edit</span></button>
@@ -78,7 +77,7 @@ function editar(id) {
   document.getElementById("nombres").value = editar.nombre;
   document.getElementById("correo").value = editar.correo;
   document.getElementById("telefono").value = editar.celular;
-  document.getElementById("user").value = editar.usuario;
+  document.getElementById("user").value = editar.estudios;
   document.getElementById("button").innerHTML = "Editar";
 }
 

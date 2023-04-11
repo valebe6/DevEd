@@ -45,7 +45,6 @@
     width: 100px;
 }
 .cab{
-    
     margin: 35px;
 }
 .botcab{
@@ -69,8 +68,7 @@
     font-size: 15px;
     height: 40px;
     width: 250px;
-    margin-left: 70px;
-    margin-right: 10px;
+    margin-right: 5%;
 }
 .inputsearch{
     width: 300px;
@@ -78,4 +76,9 @@
 .pdivsearch{
     display: inline-block;
     margin-left: 58.5%;
+}
+h1{
+    font-family: fantasy;
+    display: inline;
+    margin-right: 58%;
 }

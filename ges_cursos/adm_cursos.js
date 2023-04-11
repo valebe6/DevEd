@@ -5,11 +5,14 @@ idEdit = 0;
 mostrar();
 function guardar() {
   let nombres = document.getElementById("nombres").value ?? null;
-  let correo = document.getElementById("correo").value ?? null;
-  let telefono = document.getElementById("telefono").value ?? null;
-  let usuario = document.getElementById("user").value ?? null;
+  let Nivel = document.getElementById("Nivel").value ?? null;
+  let Requisitos = document.getElementById("Requisitos").value ?? null;
+  let Docente = document.getElementById("Docente").value ?? null;
+  let Valor = document.getElementById("Valor").value ?? null;
+  let Horario = document.getElementById("Horario").value ?? null;
+  let Plataforma = document.getElementById("Plataforma").value ?? null;
 
-  if (!nombres || !correo || !telefono || !usuario) {
+  if (!nombres || !Nivel || !Requisitos || !Docente || !Valor || !Horario || !Plataforma) {
     Swal.fire({
       icon: 'error',
       title: 'Los datos no fueron guardados',
@@ -28,9 +31,12 @@ function guardar() {
   datosIngresados = {
     id: this.id,
     nombre: nombres,
-    correo: correo,
-    celular: telefono,
-    usuario: usuario,
+    Nivel: Nivel,
+    Requisitos: Requisitos,
+    Docente: Docente,
+    Valor: Valor,
+    Horario: Horario,
+    Plataforma: Plataforma
   };
   if (!this.edit) {
     id++
@@ -43,11 +49,15 @@ function guardar() {
   }
   mostrar();
   document.getElementById("nombres").value = "";
-  document.getElementById("correo").value = "";
-  document.getElementById("telefono").value = "";
-  document.getElementById("user").value = "";
+  document.getElementById("Nivel").value = "";
+  document.getElementById("Requisitos").value = "";
+  document.getElementById("Docente").value = "";
+  document.getElementById("Valor").value = "";
+  document.getElementById("Horario").value = "";
+  document.getElementById("Plataforma").value = "";
   document.getElementById("modal").style.display = "none";
 }
+
 
 function mostrar() {
   const contenedor = document.getElementById("datosTabla");
@@ -56,9 +66,12 @@ function mostrar() {
     resultados += `<tr>
                             <td>${data.id}</td>
                             <td>${data.nombre}</td>
-                            <td>${data.correo}</td>
-                            <td>${data.celular}</td>
-                            <td>${data.usuario}</td>
+                            <td>${data.Nivel}</td>
+                            <td>${data.Requisitos}</td>
+                            <td>${data.Docente}</td>
+                            <td>${data.Valor}</td>
+                            <td>${data.Horario}</td>
+                            <td>${data.Plataforma}</td>
                             <th class="text-center">
                                 <button class="boted" data-bs-toggle="modal"
                                 data-bs-target="#modalArticulo" onclick="editar('${data.id}')">Editar <span class="material-symbols-outlined">edit</span></button>
@@ -76,9 +89,12 @@ function editar(id) {
   this.idEdit = id;
   this.edit = true;
   document.getElementById("nombres").value = editar.nombre;
-  document.getElementById("correo").value = editar.correo;
-  document.getElementById("telefono").value = editar.celular;
-  document.getElementById("user").value = editar.usuario;
+  document.getElementById("Nivel").value = editar.Nivel;
+  document.getElementById("Requisitos").value = editar.Requisitos;
+  document.getElementById("Docente").value = editar.Docente;
+  document.getElementById("Valor").value = editar.Valor;
+  document.getElementById("Horario").value = editar.Horario;
+  document.getElementById("Plataforma").value = editar.Plataforma;
   document.getElementById("button").innerHTML = "Editar";
 }
 

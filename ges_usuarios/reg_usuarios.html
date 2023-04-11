@@ -36,102 +36,143 @@
   </head>
 
   <body>
-    <div class="text-center cab">
-      <button
-        onclick="location.href='/ges_usuarios/reg_usuarios.html'"
-        class="botcab"
-      >
-        Administrar Usuarios
-      </button>
-      <button onclick="location.href='login.html'" class="botcab">
-        Administrar Docentes
-      </button>
-      <button onclick="location.href='login.html'" class="botcab">
-        Administrar Cursos
-      </button>
-    </div>
+    <div class="cab">
+      <div class="text-center">
+        <button
+          onclick="location.href='/ges_usuarios/reg_usuarios.html'"
+          class="botcab"
+        >
+          Administrar Usuarios
+        </button>
+        <button
+          onclick="location.href='/ges_docentes/ges_docentes.html'"
+          class="botcab"
+        >
+          Administrar Docentes
+        </button>
+        <button
+          onclick="location.href='/ges_cursos/adm_cursos.html'"
+          class="botcab"
+        >
+          Administrar Cursos
+        </button>
+        <button
+          onclick="location.href='/index.html'"
+          class="botcs"
+        >
+          Cerrar Sesión
+        </button>
 
-    <div class="container mt-4 shadow-lg p-3 mb-5 bg-body rounded">
-      <button
-        id="btnCrear"
-        type="button"
-        class="bot"
-        data-bs-toggle="modal"
-        data-bs-target="#modalArticulo"
-        onclick="crear()"
-      >
-        Crear
-      </button>
+      </div>
 
-      <table
-        id="tablaArticulos"
-        class="table mt-2 table-bordered table-striped"
-      >
-        <thead>
-          <tr class="text-center">
-            <th>id</th>
-            <th>Nombre</th>
-            <th>Correo</th>
-            <th>Telefono</th>
-            <th>Usuario</th>
-            <th>Opciones</th>
-          </tr>
-        </thead>
-        <tbody id="datosTabla"></tbody>
-      </table>
-    </div>
-    <div
-      id="modalArticulo"
-      class="modal fade"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header pmod text-white">
-            <h5 class="modal-title" id="exampleModalLabel">Usuarios</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="mb-3">
-                <label for="nombres" class="col-form-label"
-                  >Nombres y Apellidos</label
-                >
-                <input
-                  id="nombres"
-                  type="text"
-                  class="form-control"
-                  autofocus
+      <div class="container mt-4 shadow-lg p-3 mb-5 bg-body rounded">
+        <button
+          id="btnCrear"
+          type="button"
+          class="bot"
+          data-bs-toggle="modal"
+          data-bs-target="#modalArticulo"
+          onclick="crear()"
+        >
+          Crear
+        </button>
+
+        <div class="pdivsearch">
+          <form class="d-flex inputsearch" role="search">
+            <input
+              class="form-control me-2 inputsearch"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="bot" type="submit">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-search"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
                 />
-              </div>
-              <div class="mb-3">
-                <label for="correo" class="col-form-label">Correo</label>
-                <input id="correo" type="text" class="form-control" />
-              </div>
-              <div class="mb-3">
-                <label for="telefono" class="col-form-label">Telefono</label>
-                <input id="telefono" type="number" class="form-control" />
-              </div>
-              <div class="mb-3">
-                <label for="user" class="col-form-label">User</label>
-                <input id="user" type="text" class="form-control" />
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="botclose" data-bs-dismiss="modal">
-              Close
+              </svg>
+              Search
             </button>
-            <button onclick="guardar()" type="submit" class="bot" id="button">
-              Guardar
-            </button>
+          </form>
+        </div>
+
+        <table
+          id="tablaArticulos"
+          class="table mt-2 table-bordered table-striped"
+        >
+          <thead>
+            <tr class="text-center">
+              <th>id</th>
+              <th>Nombre</th>
+              <th>Correo</th>
+              <th>Telefono</th>
+              <th>Usuario</th>
+              <th>Opciones</th>
+            </tr>
+          </thead>
+          <tbody id="datosTabla"></tbody>
+        </table>
+      </div>
+      <div
+        id="modalArticulo"
+        class="modal fade"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header pmod text-white">
+              <h5 class="modal-title" id="exampleModalLabel">Usuarios</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="nombres" class="col-form-label"
+                    >Nombres y Apellidos</label
+                  >
+                  <input
+                    id="nombres"
+                    type="text"
+                    class="form-control"
+                    autofocus
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="correo" class="col-form-label">Correo</label>
+                  <input id="correo" type="text" class="form-control" />
+                </div>
+                <div class="mb-3">
+                  <label for="telefono" class="col-form-label">Telefono</label>
+                  <input id="telefono" type="number" class="form-control" />
+                </div>
+                <div class="mb-3">
+                  <label for="user" class="col-form-label">User</label>
+                  <input id="user" type="text" class="form-control" />
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="botclose" data-bs-dismiss="modal">
+                Cerrar
+              </button>
+              <button onclick="guardar()" type="submit" class="bot" id="button">
+                Guardar
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -153,5 +194,6 @@
     ></script>
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
     <script src="/ges_usuarios/reg_usuarios.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>

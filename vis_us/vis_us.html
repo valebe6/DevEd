@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DevEd</title>
-    <link href="/ges_docentes/ges_docentes.css" rel="stylesheet" />
+    <link href="/vis_us/vis_us.css" rel="stylesheet"/>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -37,25 +37,12 @@
 
   <body>
     <div class="cab">
-      <div class="text-center">
-        <button
-          onclick="location.href='/ges_usuarios/reg_usuarios.html'"
-          class="botcab"
-        >
-          Administrar Usuarios
-        </button>
-        <button
-          onclick="location.href='/ges_docentes/ges_docentes.html'"
-          class="botcab"
-        >
-          Administrar Docentes
-        </button>
-        <button
-          onclick="location.href='/ges_cursos/adm_cursos.html'"
-          class="botcab"
-        >
-          Administrar Cursos
-        </button>
+      <div class="text-end">
+        <h1>BOARD <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16" style="width: 30px; height: 30px;">
+            <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+            <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+            <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+          </svg></h1>
         <button
           onclick="location.href='/index.html'"
           class="botcs"
@@ -73,7 +60,7 @@
           data-bs-target="#modalArticulo"
           onclick="crear()"
         >
-          Crear
+          Agregar Curso
         </button>
 
         <div class="pdivsearch">
@@ -109,10 +96,10 @@
           <thead>
             <tr class="text-center">
               <th>id</th>
-              <th>Nombre</th>
-              <th>Correo</th>
-              <th>Telefono</th>
-              <th>Estudios</th>
+              <th>Nombre del curso</th>
+              <th>Docente</th>
+              <th>Horario</th>
+              <th>Plataforma</th>
               <th>Opciones</th>
             </tr>
           </thead>
@@ -129,7 +116,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header pmod text-white">
-              <h5 class="modal-title" id="exampleModalLabel">Docentes</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Board</h5>
               <button
                 type="button"
                 class="btn-close"
@@ -141,7 +128,7 @@
               <form>
                 <div class="mb-3">
                   <label for="nombres" class="col-form-label"
-                    >Nombres y Apellidos</label
+                    >Nombre del curso</label
                   >
                   <input
                     id="nombres"
@@ -151,17 +138,37 @@
                   />
                 </div>
                 <div class="mb-3">
-                  <label for="correo" class="col-form-label">Correo</label>
-                  <input id="correo" type="email" class="form-control" />
+                  <label for="docente" class="col-form-label">Docente</label>
+                  <input id="docente" type="text" class="form-control" />
                 </div>
                 <div class="mb-3">
-                  <label for="telefono" class="col-form-label">Telefono</label>
-                  <input id="telefono" type="number" class="form-control" />
-                </div>
-                <div class="mb-3">
-                  <label for="user" class="col-form-label">Estudios</label>
-                  <input id="estudios" type="text" class="form-control" />
-                </div>
+                    <label for="message-text" class="col-form-label"
+                      >Horarios:</label
+                    >
+  
+                    <select id="horario" placeholder="Another input placeholder">
+                      <option value="7:00 a 9:00 am">7:00 a 9:00 am</option>
+                      <option value="9:00 a 10:00 am">9:00 a 10:00 am</option>
+                      <option value="10:00 a 12:00 am">10:00 a 12:00 am</option>
+                      <option value="12:00 a 3:00 pm">12:00 a 3:00 pm</option>
+                      <option value="3:00 a 5:00 pm">3:00 a 5:00 pm</option>
+                      <option value="5:00 a 7:00 pm">5:00 a 7:00 pm</option>
+                      <option value="7:00 a 8:00 pm">7:00 a 8:00 pm</option>
+                      <option value="8:00 a 9:00 pm">8:00 a 9:00 pm</option>
+                      <option value="9:00 a 10:00 pm">9:00 a 10:00 pm</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="message-text" class="col-form-label"
+                      >Plataforma</label
+                    >
+                    <select id="plataforma" placeholder="Another input placeholder">
+                      <option value="Meet">Meet</option>
+                      <option value="Zoom">Zoom</option>
+                      <option value="Teams">Teams</option>
+                      <option value="Discord">Discord</option>
+                    </select>
+                  </div>
               </form>
             </div>
             <div class="modal-footer">
@@ -192,7 +199,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
-    <script src="/ges_docentes/ges_docentes.js"></script>
+    <script src="/vis_us/vis_us.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>

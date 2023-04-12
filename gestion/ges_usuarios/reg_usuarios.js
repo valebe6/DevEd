@@ -3,6 +3,7 @@ id = 1;
 edit = false;
 idEdit = 0;
 mostrar();
+
 function guardar() {
   let nombres = document.getElementById("nombres").value ?? null;
   let correo = document.getElementById("correo").value ?? null;
@@ -82,11 +83,34 @@ function editar(id) {
   document.getElementById("button").innerHTML = "Editar";
 }
 
-function eliminar(id) {
-  let indice = this.datos.findIndex((data) => data.id == id);
-  this.datos.splice(indice, 1);
-  mostrar();
+
+function eliminar(){
+  Swal.fire({
+  title: 'Eliminar',
+  text: "¿Está seguro que desea eliminar?",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Sí, eliminar'
+}).then((result) => {
+  if (result.isConfirmed) {
+
+    let indice = this.datos.findIndex((data) => data.id == id);
+    this.datos.splice(indice, 1);
+    mostrar();
+
+    Swal.fire(
+      'Eliminado',
+      'El elemento ha sido eliminado correctamente.',
+      'success'
+    )
+  }
+})
 }
+
+  
+
 
 function crear() {
   document.getElementById("button").innerHTML = "Guardar";

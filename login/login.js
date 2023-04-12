@@ -4,11 +4,16 @@ function validar() {
 
   if (username == "admin" && password == "12345") {
     window.location.href="/gestion/ges_usuarios/reg_usuarios.html"
+
   } else if (username == "user" && password == "12345") {
-    window.location.href="/gestion/ges_usuarios/reg_usuarios.html"
+    window.location.href="/vista_usuario/vista_usuario.html"
   }
   else{
-    alert("El usuario no se encuentra registrado")
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: 'El usuario no se encuentra registrado.',
+    })
   }
 }
 

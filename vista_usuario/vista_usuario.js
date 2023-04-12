@@ -44,7 +44,7 @@ function guardar() {
   document.getElementById("nombres").value = "";
   document.getElementById("docente").value = "";
   document.getElementById("horario").value = "";
-  document.getElementById("user").value = "";
+  document.getElementById("plataforma").value = "";
   document.getElementById("modal").style.display = "none";
 }
 
@@ -54,37 +54,21 @@ function mostrar() {
   this.datos.forEach((data) => {
     resultados += `<tr>
                             <td>${data.id}</td>
-                            <td>${data.nombre}</td>
+                            <td>${data.nombres}</td>
                             <td>${data.docente}</td>
-                            <td>${data.celular}</td>
+                            <td>${data.horario}</td>
                             <td>${data.plataforma}</td>
                             <th class="text-center">
-                                <button class="boted" data-bs-toggle="modal"
-                                data-bs-target="#modalArticulo" onclick="editar('${data.id}')">Editar <span class="material-symbols-outlined">edit</span></button>
+                                <button class="botir" data-bs-toggle="modal"
+                                data-bs-target="#modalArticulo" onclick="location.href='/vista_usuario/vista_curso_usuario.html'">Ir al curso <span class="material-symbols-outlined">
+                                ads_click
+                                </span></button>
                                 <button class="botel mt-2" onclick="eliminar('${data.id}')">Borrar<span class="material-symbols-outlined">delete_forever</span></button>
                             </th>
                         </tr>
                         `;
   });
   contenedor.innerHTML = resultados;
-}
-
-function editar(id) {
-  let editar = this.datos.find((data) => (data.id = id));
-  console.log(editar);
-  this.idEdit = id;
-  this.edit = true;
-  document.getElementById("nombres").value = editar.nombre;
-  document.getElementById("docente").value = editar.docente;
-  document.getElementById("horario").value = editar.celular;
-  document.getElementById("user").value = editar.plataforma;
-  document.getElementById("button").innerHTML = "Editar";
-}
-
-function eliminar(id) {
-  let indice = this.datos.findIndex((data) => data.id == id);
-  this.datos.splice(indice, 1);
-  mostrar();
 }
 
 function crear() {

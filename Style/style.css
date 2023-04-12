@@ -1,3 +1,87 @@
+/* GESTION DE CUENTAS */
+.bot{
+    background: #2F4550;
+    color: #F4F4F9;
+    border-width: 0px;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 15px;
+    height: 40px;
+    width: 150px;
+}
+.botclose{
+    background: #586F7C;
+    color: #F4F4F9;
+    border-width: 0px;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 15px;
+    height: 40px;
+    width: 80px;
+}
+.pmod{
+    background: #B8DBD9;
+}
+.modal-title{
+    color: #2F4550;
+}
+.boted{
+    background: #B8DBD9;
+    color: #2F4550;
+    border-width: 0px;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 15px;
+    height: 40px;
+    width: 100px;
+}
+.botel{
+    background: #2F4550;
+    color: #B8DBD9;
+    border-width: 0px;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 15px;
+    height: 40px;
+    width: 100px;
+}
+.cab{
+    
+    margin: 35px;
+}
+.botcab{
+    background: #2F4550;
+    color: #F4F4F9;
+    border-width: 0px;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 15px;
+    height: 40px;
+    width: 250px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.botcs{
+    background: #586F7C;
+    color: #F4F4F9;
+    border-width: 0px;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 15px;
+    height: 40px;
+    width: 250px;
+    margin-left: 70px;
+    margin-right: 10px;
+}
+.inputsearch{
+    width: 300px;
+}
+.pdivsearch{
+    display: inline-block;
+    margin-left: 58.5%;
+}
+
+/* LOGIN */
 body {
     font-family: 'Overpass', sans-serif;
     font-weight: normal;
@@ -9,6 +93,7 @@ body {
 }
 
 #contenedor {
+    float: right;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -131,3 +216,29 @@ body {
 .inferior a:hover {
     color: #2F4550;
 }
+
+/* VISTA USUARIO */
+h1{
+    font-family: fantasy;
+    display: inline;
+    margin-right: 58%;
+}
+
+/* INDEX */
+#mar{
+
+    margin: 60px;
+  }
+  body {
+    background: #f4f4f9;
+  }
+  button{
+    font-size: 30px;
+    border: 0px;
+    border-radius: 7px;
+    background: #586F7C;
+    margin: 15px;
+    color: #f4f4f9;
+    font-family: monospace;
+  }
+  

@@ -11,18 +11,17 @@ function guardar() {
 
   if (!nombres || !docente || !horario || !plataforma) {
     Swal.fire({
-      icon: 'error',
-      title: 'Los datos no fueron guardados',
-      text: 'Faltan campos por completar',
-    })
+      icon: "error",
+      title: "Los datos no fueron guardados",
+      text: "Faltan campos por completar",
+    });
     return;
-  }
-  else{
+  } else {
     Swal.fire(
-      'Guardado!',
-      'Los datos ingresados fueron guardados exitosamente',
-      'success'
-    )
+      "Guardado!",
+      "Los datos ingresados fueron guardados exitosamente",
+      "success"
+    );
   }
 
   datosIngresados = {
@@ -33,7 +32,7 @@ function guardar() {
     plataforma: plataforma,
   };
   if (!this.edit) {
-    id++
+    id++;
     datosIngresados.id;
     this.datos.push(datosIngresados);
   } else {

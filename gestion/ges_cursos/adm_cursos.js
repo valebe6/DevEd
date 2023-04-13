@@ -12,20 +12,27 @@ function guardar() {
   let Horario = document.getElementById("Horario").value ?? null;
   let Plataforma = document.getElementById("Plataforma").value ?? null;
 
-  if (!nombres || !Nivel || !Requisitos || !Docente || !Valor || !Horario || !Plataforma) {
+  if (
+    !nombres ||
+    !Nivel ||
+    !Requisitos ||
+    !Docente ||
+    !Valor ||
+    !Horario ||
+    !Plataforma
+  ) {
     Swal.fire({
-      icon: 'error',
-      title: 'Los datos no fueron guardados',
-      text: 'Faltan campos por completar',
-    })
+      icon: "error",
+      title: "Los datos no fueron guardados",
+      text: "Faltan campos por completar",
+    });
     return;
-  }
-  else{
+  } else {
     Swal.fire(
-      'Guardado!',
-      'Los datos ingresados fueron guardados exitosamente',
-      'success'
-    )
+      "Guardado!",
+      "Los datos ingresados fueron guardados exitosamente",
+      "success"
+    );
   }
 
   datosIngresados = {
@@ -36,14 +43,16 @@ function guardar() {
     Docente: Docente,
     Valor: Valor,
     Horario: Horario,
-    Plataforma: Plataforma
+    Plataforma: Plataforma,
   };
   if (!this.edit) {
-    id++
+    id++;
     datosIngresados.id;
     this.datos.push(datosIngresados);
   } else {
-    let editar = this.datos.findIndex((data) => (data.id = this.idEdit));
+    let editar = this.datos.findIndex((data) => data.id == this.idEdit);
+    console.log(editar);
+    console.log(this.datos[editar]);
     datosIngresados.id = this.idEdit;
     this.datos[editar] = datosIngresados;
   }
@@ -55,9 +64,7 @@ function guardar() {
   document.getElementById("Valor").value = "";
   document.getElementById("Horario").value = "";
   document.getElementById("Plataforma").value = "";
-  document.getElementById("modal").style.display = "none";
 }
-
 
 function mostrar() {
   const contenedor = document.getElementById("datosTabla");
@@ -84,8 +91,7 @@ function mostrar() {
 }
 
 function editar(id) {
-  let editar = this.datos.find((data) => (data.id = id));
-  console.log(editar);
+  let editar = this.datos.find((data) => data.id == id);
   this.idEdit = id;
   this.edit = true;
   document.getElementById("nombres").value = editar.nombre;
@@ -98,29 +104,28 @@ function editar(id) {
   document.getElementById("button").innerHTML = "Editar";
 }
 
-function eliminar(){
+function eliminar(id) {
   Swal.fire({
-  title: 'Eliminar',
-  text: "¿Está seguro que desea eliminar?",
-  icon: 'warning',
-  showCancelButton: true,
-  confirmButtonColor: '#3085d6',
-  cancelButtonColor: '#d33',
-  confirmButtonText: 'Sí, eliminar'
-}).then((result) => {
-  if (result.isConfirmed) {
+    title: "Eliminar",
+    text: "¿Está seguro que desea eliminar?",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Sí, eliminar",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      let indice = this.datos.findIndex((data) => data.id == id);
+      this.datos.splice(indice, 1);
+      mostrar();
 
-    let indice = this.datos.findIndex((data) => data.id == id);
-    this.datos.splice(indice, 1);
-    mostrar();
-
-    Swal.fire(
-      'Eliminado',
-      'El elemento ha sido eliminado correctamente.',
-      'success'
-    )
-  }
-})
+      Swal.fire(
+        "Eliminado",
+        "El elemento ha sido eliminado correctamente.",
+        "success"
+      );
+    }
+  });
 }
 function crear() {
   document.getElementById("button").innerHTML = "Guardar";

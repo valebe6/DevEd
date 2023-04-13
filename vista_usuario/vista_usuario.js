@@ -26,7 +26,7 @@ function guardar() {
 
   datosIngresados = {
     id: this.id,
-    nombre: nombres,
+    nombres: nombres,
     docente: docente,
     celular: horario,
     plataforma: plataforma,
@@ -45,12 +45,12 @@ function guardar() {
   document.getElementById("docente").value = "";
   document.getElementById("horario").value = "";
   document.getElementById("plataforma").value = "";
-  document.getElementById("modal").style.display = "none";
 }
 
 function mostrar() {
   const contenedor = document.getElementById("datosTabla");
   let resultados = "";
+  console.log(this.datos)
   this.datos.forEach((data) => {
     resultados += `<tr>
                             <td>${data.id}</td>
@@ -71,6 +71,32 @@ function mostrar() {
   contenedor.innerHTML = resultados;
 }
 
+function eliminar(id){
+  Swal.fire({
+  title: 'Eliminar',
+  text: "¿Está seguro que desea eliminar?",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Sí, eliminar'
+}).then((result) => {
+  if (result.isConfirmed) {
+    let indice = this.datos.findIndex((data) => data.id == id);
+    this.datos.splice(indice, 1);
+    mostrar();
+
+    Swal.fire(
+      'Eliminado',
+      'El elemento ha sido eliminado correctamente.',
+      'success'
+    )
+  }
+})
+}
+
+
 function crear() {
   document.getElementById("button").innerHTML = "Guardar";
+  this.edit = false;
 }

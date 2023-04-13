@@ -225,8 +225,64 @@ body {
 }
 
 /* VISTA USUARIO */
-h1 {
+.ph1 {
   font-family: fantasy;
   display: inline;
   margin-right: 58%;
+}
+.botcsvisus{
+  background: #586f7c;
+  color: #f4f4f9;
+  border-width: 0px;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 15px;
+  height: 40px;
+  width: 250px;
+  margin-right: 60px;
+}
+
+/* VISTA CURSO USUARIO */
+body{
+  background: #f4f4f9;
+}
+header{
+display: flex;    
+}
+.botvol{
+  background: #586F7C;
+  color: #F4F4F9;
+  border-width: 0px;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 15px;
+  height: 40px;
+  width: 80px;
+  margin-left: 910px;
+  margin-top: 40px;
+}
+.img1{
+  margin-top: 15px;
+  margin-left: 100px;
+  width: 120px;
+}
+.titulo2{
+  text-align: center;
+  margin-bottom: 50px;
+  font-family: fantasy;
+  font-weight: 1900;
+  color: #586F7C;
+}
+.video{
+  justify-content: center;
+  width: 560px;
+  height: 315px;
+  margin-bottom: 30px;
+}
+.subtitulos{
+  text-align: center;
+  padding-right: 40px;
+}
+.textos{
+  text-align: justify;
 }

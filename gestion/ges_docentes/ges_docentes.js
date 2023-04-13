@@ -37,7 +37,7 @@ function guardar() {
     datosIngresados.id;
     this.datos.push(datosIngresados);
   } else {
-    let editar = this.datos.findIndex((data) => (data.id = this.idEdit));
+    let editar = this.datos.findIndex((data) => (data.id == this.idEdit));
     datosIngresados.id = this.idEdit;
     this.datos[editar] = datosIngresados;
   }
@@ -71,7 +71,7 @@ function mostrar() {
 }
 
 function editar(id) {
-  let editar = this.datos.find((data) => (data.id = id));
+  let editar = this.datos.find((data) => (data.id == id));
   console.log(editar);
   this.idEdit = id;
   this.edit = true;
@@ -82,7 +82,7 @@ function editar(id) {
   document.getElementById("button").innerHTML = "Editar";
 }
 
-function eliminar(){
+function eliminar(id){
   Swal.fire({
   title: 'Eliminar',
   text: "¿Está seguro que desea eliminar?",

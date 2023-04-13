@@ -28,7 +28,7 @@ function guardar() {
     id: this.id,
     nombres: nombres,
     docente: docente,
-    celular: horario,
+    horario: horario,
     plataforma: plataforma,
   };
   if (!this.edit) {
